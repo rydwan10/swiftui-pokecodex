@@ -8,17 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject private var navigationManager: NavigationManager
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack(path: $navigationManager.path) {
+            Group {
+                // Initial view based on authentication state
+                if navigationManager.isAuthenticated {
+                    MainView()
+                } else {
+                    LoginView(userUseCase: DependencyContainer.shared.userUseCase)
+                }
+            }
+            .navigationDestination(for: AppRoute.self) { route in
+                switch route {
+                case .login:
+                    LoginView(userUseCase: DependencyContainer.shared.userUseCase)
+                case .register:
+                    RegisterView(userUseCase: DependencyContainer.shared.userUseCase)
+                case .home:
+                    MainView()
+                case .pokemonDetail(let pokemon):
+                    PokemonDetailView(pokemonUseCase: DependencyContainer.shared.pokemonUseCase, pokemonName: pokemon.name)
+                case .searchPokemon(let searchTerm):
+                    PokemonDetailView(pokemonUseCase: DependencyContainer.shared.pokemonUseCase, pokemonName: searchTerm)
+                }
+            }
+
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(NavigationManager())
 }
