@@ -1,4 +1,5 @@
 # 🎮 PokeCodex
+<img width="128" height="128" alt="pokecodex" src="https://github.com/user-attachments/assets/fa17dce1-ff20-411d-95c7-cc358c96d051" />
 
 A comprehensive iOS Pokemon encyclopedia application built with SwiftUI, featuring user authentication, Pokemon data browsing, and detailed information display.
 
@@ -28,6 +29,10 @@ PokeCodex is a modern iOS application that provides users with comprehensive Pok
 - **👤 User Profiles**: Personal user profiles with session management
 - **💾 Offline Support**: Local data storage with Couchbase Lite
 - **🎨 Modern UI**: SwiftUI-based interface with smooth animations
+
+| Registration  | Main Flow |
+| ------------- | ------------- |
+| <video src="https://github.com/user-attachments/assets/28dadd0b-f6fe-48a9-b8f3-2d158486b4e9" /> | <video src="https://github.com/user-attachments/assets/7b624639-4f9e-4f69-88f2-482b6eb0b3db" />  |
 
 ## 🏗️ Architecture
 
