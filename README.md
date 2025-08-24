@@ -30,9 +30,13 @@ PokeCodex is a modern iOS application that provides users with comprehensive Pok
 - **💾 Offline Support**: Local data storage with Couchbase Lite
 - **🎨 Modern UI**: SwiftUI-based interface with smooth animations
 
-| Registration  | Main Flow |
-| ------------- | ------------- |
-| <video src="https://github.com/user-attachments/assets/28dadd0b-f6fe-48a9-b8f3-2d158486b4e9" /> | <video src="https://github.com/user-attachments/assets/7b624639-4f9e-4f69-88f2-482b6eb0b3db" />  |
+| Registration  | Main Flow | Infinite Scroll | 
+| ------------- | ------------- | ------------ |
+| <video src="https://github.com/user-attachments/assets/28dadd0b-f6fe-48a9-b8f3-2d158486b4e9" /> | <video src="https://github.com/user-attachments/assets/7b624639-4f9e-4f69-88f2-482b6eb0b3db" />  |  <video src="https://github.com/user-attachments/assets/f3b8a787-0cc4-44e9-b6c1-f5a24810cead" /> |
+
+
+
+
 
 ## 🏗️ Architecture
 
