@@ -29,17 +29,6 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        navigationManager.logout()
-                    }) {
-                        Image(systemName: "rectangle.portrait.and.arrow.right")
-                            .foregroundColor(.red)
-                            .font(.system(size: 20))
-                    }
-                    .padding(.horizontal)
-                }
                 searchBar
                 pokemonListContent
             }

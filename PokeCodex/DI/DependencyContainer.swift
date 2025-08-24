@@ -48,4 +48,8 @@ class DependencyContainer {
     func makePokemonDetailViewModel(pokemonName: String) -> PokemonDetailViewModel {
         return PokemonDetailViewModel(pokemonUseCase: pokemonUseCase, pokemonName: pokemonName)
     }
+    
+    func makeProfileViewModel() -> ProfileViewModel {
+        return ProfileViewModel(userUseCase: userUseCase)
+    }
 }

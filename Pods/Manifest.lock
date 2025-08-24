@@ -3,24 +3,22 @@ PODS:
   - CouchbaseLite-Swift (3.2.4)
   - Kingfisher (8.5.0)
   - MBProgressHUD (1.2.0)
-  - PagerTabStripView (4.0.0)
   - RxCocoa (6.9.0):
     - RxRelay (= 6.9.0)
     - RxSwift (= 6.9.0)
   - RxRelay (6.9.0):
     - RxSwift (= 6.9.0)
   - RxSwift (6.9.0)
-  - ToastUI (2.0.0)
+  - XLPagerTabStrip (9.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - CouchbaseLite-Swift (= 3.2.4)
   - Kingfisher
   - MBProgressHUD (~> 1.2.0)
-  - PagerTabStripView (~> 4.0)
   - RxCocoa
   - RxSwift
-  - ToastUI
+  - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
@@ -28,23 +26,21 @@ SPEC REPOS:
     - CouchbaseLite-Swift
     - Kingfisher
     - MBProgressHUD
-    - PagerTabStripView
     - RxCocoa
     - RxRelay
     - RxSwift
-    - ToastUI
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   CouchbaseLite-Swift: 1d52b46b01918a84f43240ef23c90bae6d3dd837
   Kingfisher: ff0d31a1f07bdff6a1ebb3ba08b8e6e567b6500c
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  PagerTabStripView: 4d51320a7349ac4da5a662ac0bdacb8e8e5120f1
   RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
   RxRelay: 6b0c930e5cef57d5fe2032571e5e65b78e3cbdb1
   RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
-  ToastUI: 391eb9a1cc15e7ef4b79ee112e4a0b969259154f
+  XLPagerTabStrip: 27f3bfe23c53b4251c6481b06b1c289458a3fc1d
 
-PODFILE CHECKSUM: 821281b88d1a75927334f3d09c2f31ece94ea321
+PODFILE CHECKSUM: 3860a8f29a58f6610d10e0efc07c0444dfce3711
 
 COCOAPODS: 1.16.2

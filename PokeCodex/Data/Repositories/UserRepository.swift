@@ -4,6 +4,7 @@ import RxSwift
 protocol UserRepositoryProtocol {
     func registerUser(username: String, email: String, password: String) -> Observable<Bool>
     func loginUser(username: String, password: String) -> Observable<User?>
+    func getUserByUsername(username: String) -> Observable<User?>
     func checkUserExists(email: String) -> Observable<Bool>
     func checkUsernameExists(username: String) -> Observable<Bool>
 }
@@ -22,6 +23,10 @@ class UserRepository: UserRepositoryProtocol {
     
     func loginUser(username: String, password: String) -> Observable<User?> {
         return localService.validateUser(username: username, password: password)
+    }
+    
+    func getUserByUsername(username: String) -> Observable<User?> {
+        return localService.getUserByUsername(username)
     }
     
     func checkUserExists(email: String) -> Observable<Bool> {

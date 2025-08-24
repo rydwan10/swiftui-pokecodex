@@ -63,4 +63,10 @@ public class MockUserUseCase: UserUseCaseProtocol {
         // Simulate username check for preview
         return Observable.just(false)
     }
+
+    func getUserByUsername(username: String) -> Observable<User?> {
+        // Simulate user retrieval for preview
+        let mockUser = User(username: "preview_user", email: "preview@example.com", password: "password123")
+        return Observable.just(mockUser)
+    }
 }

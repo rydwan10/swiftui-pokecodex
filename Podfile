@@ -11,7 +11,8 @@ target 'PokeCodex' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'MBProgressHUD', '~> 1.2.0'
-  pod 'PagerTabStripView', '~> 4.0'
+  # pod 'PagerTabStripView', '~> 4.0'
+  pod 'XLPagerTabStrip', '~> 9.0'
   pod 'CouchbaseLite-Swift', '3.2.4'
 
 

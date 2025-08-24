@@ -42,6 +42,8 @@ class LoginViewModel: ObservableObject {
             .subscribe(onNext: { [weak self] user in
                 self?.isLoading = false
                 if let user = user {
+                    // Store username for profile access
+                    UserDefaults.standard.set(self?.username, forKey: "currentUsername")
                     self?.isLoginSuccessful = true
                 } else {
                     self?.errorMessage = "Invalid username or password"

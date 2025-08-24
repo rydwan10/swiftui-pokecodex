@@ -7,12 +7,19 @@
 
 import SwiftUI
 import MBProgressHUD
+import RxSwift
 
 struct ProfileView: View {
     // MARK: - Properties
     
     @EnvironmentObject private var navigationManager: NavigationManager
-    @State private var currentUser: User?
+    @StateObject private var viewModel: ProfileViewModel
+    
+    // MARK: - Initialization
+    
+    init() {
+        self._viewModel = StateObject(wrappedValue: DependencyContainer.shared.makeProfileViewModel())
+    }
     
     // MARK: - Body
     
@@ -28,7 +35,7 @@ struct ProfileView: View {
             .navigationBarTitleDisplayMode(.large)
         }
         .onAppear {
-            loadCurrentUser()
+            viewModel.loadCurrentUser()
         }
     }
     
@@ -36,22 +43,34 @@ struct ProfileView: View {
     
     private var profileHeader: some View {
         VStack(spacing: 20) {
-            Image(systemName: "person.circle.fill")
-                .font(.system(size: 100))
-                .foregroundColor(.blue)
+            if viewModel.isLoading {
+                ProgressView()
+                    .scaleEffect(1.5)
+                    .frame(height: 100)
+            } else {
+                Image(systemName: "person.circle.fill")
+                    .font(.system(size: 100))
+                    .foregroundColor(.blue)
+            }
             
             VStack(spacing: 8) {
-                Text(currentUser?.username ?? "User")
-                    .font(.title)
-                    .fontWeight(.bold)
-                
-                Text(currentUser?.email ?? "email@example.com")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                
-                Text("Member since \(currentUser?.createdAt.formatted(date: .abbreviated, time: .omitted) ?? "Unknown")")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                if viewModel.isLoading {
+                    Text("Loading...")
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                } else {
+                    Text(viewModel.currentUser?.username ?? "User")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    
+                    Text(viewModel.currentUser?.email ?? "email@example.com")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    Text("Member since \(viewModel.currentUser?.createdAt.formatted(date: .abbreviated, time: .omitted) ?? "Unknown")")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }
         }
         .padding()
@@ -98,6 +117,7 @@ struct ProfileView: View {
     
     private var logoutButton: some View {
         Button(action: {
+            viewModel.clearCurrentUser()
             navigationManager.logout()
         }) {
             HStack {
@@ -116,11 +136,7 @@ struct ProfileView: View {
     
     // MARK: - Helper Methods
     
-    private func loadCurrentUser() {
-        // TODO: Load current user from UserDefaults or other storage
-        // For now, create a mock user
-        currentUser = User(username: "PokemonTrainer", email: "trainer@pokecodex.com", password: "")
-    }
+    // Profile data is now managed by ProfileViewModel
 }
 
 // MARK: - Profile Option Row

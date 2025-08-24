@@ -47,16 +47,22 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5DCCFFD02E59CDD2001732D6 /* PokeCodex */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = PokeCodex;
 			sourceTree = "<group>";
 		};
 		5DCCFFDF2E59CDD3001732D6 /* PokeCodexTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = PokeCodexTests;
 			sourceTree = "<group>";
 		};
 		5DCCFFE92E59CDD4001732D6 /* PokeCodexUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = PokeCodexUITests;
 			sourceTree = "<group>";
 		};
@@ -281,13 +287,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PokeCodex/Pods-PokeCodex-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PokeCodex/Pods-PokeCodex-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
